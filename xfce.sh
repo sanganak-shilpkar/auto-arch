@@ -97,29 +97,46 @@ xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary>F5" -n -t st
 
 # ===== xfce4-panel =====
 
+# reset plugin ( not needed)
+# xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-1' --reset
+
 # create single panel
-xfconf-query --channel 'xfce4-panel' -p '/panels' -t int -s 1
+xfconf-query -c 'xfce4-panel' -p '/panels' -t int -s 1
+
+# remove plugin ids 
+xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -rR
+
+# create plugin ids
+xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -t int -s 1 -t int -s 2 -t int -s 3 --create
+
+# create plugins
+xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-1' -s "power-manager-plugin"
+
+xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-2' -s "systray"
+xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-2/icon-size' -s 48
+
+xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-3' -s "pulseaudio"
 
 # move panel to top center
-xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/position' -t string -s "p=9;x=952;y=25"
+xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/position' -t string -s "p=9;x=952;y=25"
 
 # enable dark-mode
-xfconf-query --channel 'xfce4-panel' -p '/panels/dark-mode' -s true
+xfconf-query -c 'xfce4-panel' -p '/panels/dark-mode' -s true
 
 # adjust length
-xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/length-adjust' -t bool -ns true
+xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/length-adjust' -t bool -ns true
 
 # do not reserve space
-xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/disable-struts' -t bool -ns true
+xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/disable-struts' -t bool -ns true
+
+# auto hide panel
+xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/autohide-behavior' -t bool -ns true
 
 # change panel row size
-xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/size' -s 52
+xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/size' -s 52
 
 # change icon size
-xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/icon-size' -s 36
-
-# add plug ins
-xfconf-query --channel 'xfce4-panel' -p '/panels/panel-2/plugin-2' -s power-manager-plugin
+xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/icon-size' -t int -ns 36
 
 # finally, local panel
 xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/position-locked' -t bool -ns true
