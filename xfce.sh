@@ -4,7 +4,7 @@
 # unchanged : xfce4-notifyd 
 # unchanged : displays
 # unchanged : xfwm4
-# xfce4-panel
+#   changed : xfce4-panel
 #   changed : xfce4-keyboard-shortcuts
 # unchanged : xfce4-session
 # unchanged : thunar
@@ -13,7 +13,7 @@
 # unchanged : xfce4-power-manager
 #   changed : xsettings
 
-# ----- xfce4-appfinder -----
+# ===== xfce4-appfinder =====
 xfconf-query -c xfce4-appfinder -p /remember-category -s false
 xfconf-query -c xfce4-appfinder -p /always-center -s true
 xfconf-query -c xfce4-appfinder -p /enable-service -s true
@@ -21,13 +21,13 @@ xfconf-query -c xfce4-appfinder -p /single-window -s true
 xfconf-query -c xfce4-appfinder -p /item-icon-size -s 3
 xfconf-query -c xfce4-appfinder -p /hide-category-pane -s true
 
-# ----- xsettings -----
+# ===== xsettings =====
 xfconf-query -c xsettings -p /Net/ThemeName -s Adwaita-dark
 xfconf-query -c xsettings -p /Net/IconThemeName -s ePapirus-Dark
 xfconf-query -c xsettings -p /Gtk/FontName -s "Sans 12"
 xfconf-query -c xsettings -p /Gtk/MonospaceFontName -s "Monospace 12"
 
-# ----- xfce4-desktop -----
+# ===== xfce4-desktop =====
 xfconf-query -c xfce4-desktop -p /backdrop/single-workspace-mode -s true
 xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitoreDP-1/workspace0/last-image -s "/usr/share/backgrounds/xfce/xfce-teal.jpg"
 xfconf-query -c xfce4-desktop -p /desktop-icons/file-icons/show-filesystem -s false
@@ -37,7 +37,7 @@ xfconf-query -c xfce4-desktop -p /desktop-icons/file-icons/show-trash -s false
 xfconf-query -c xfce4-desktop -p /desktop-icons/show-thumbnails -s false
 xfconf-query -c xfce4-desktop -p /desktop-icons/show-thumbnails -s false
 
-# ----- xfce4-keyboard-shortcuts -----
+# ===== xfce4-keyboard-shortcuts =====
 
 # window operation menu
 xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Alt>space" -s "popup_menu_key"
@@ -94,6 +94,36 @@ xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary>F2" -n -t st
 xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary>F3" -n -t string -s workspace_3_key
 xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary>F4" -n -t string -s workspace_4_key
 xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary>F5" -n -t string -s workspace_5_key
+
+# ===== xfce4-panel =====
+
+# create single panel
+xfconf-query --channel 'xfce4-panel' -p '/panels' -t int -s 1
+
+# move panel to top center
+xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/position' -t string -s "p=9;x=952;y=25"
+
+# enable dark-mode
+xfconf-query --channel 'xfce4-panel' -p '/panels/dark-mode' -s true
+
+# adjust length
+xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/length-adjust' -t bool -ns true
+
+# do not reserve space
+xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/disable-struts' -t bool -ns true
+
+# change panel row size
+xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/size' -s 52
+
+# change icon size
+xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/icon-size' -s 36
+
+# add plug ins
+xfconf-query --channel 'xfce4-panel' -p '/panels/panel-2/plugin-2' -s power-manager-plugin
+
+# finally, local panel
+xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/position-locked' -t bool -ns true
+
 
 
 
