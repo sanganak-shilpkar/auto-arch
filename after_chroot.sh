@@ -44,10 +44,10 @@ mount /dev/sda1 /boot/efi
 pacman -S neovim fish tmux git sudo fakeroot which --noconfirm
 
 # Install omf and theme for fish
-curl -L https://get.oh-my.fish | fish
+# curl -L https://get.oh-my.fish | fish
 
 # Install theme
-omf install boxfish
+# omf install boxfish
 
 # Update fish hostname to uname -n for theme
 sed -i 's/hostname/uname -n/' ~/.config/fish/functions/fish_prompt.fish
