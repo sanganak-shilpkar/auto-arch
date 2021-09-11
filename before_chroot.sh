@@ -54,6 +54,6 @@ curl https://raw.githubusercontent.com/sanganak-shilpkar/auto-arch/main/after_ch
 genfstab -U /mnt >> /mnt/etc/fstab
 
 # Change root to new system & run second script
-arch-chroot /mnt ./Archchroot.sh
+arch-chroot /mnt sh Archchroot.sh
 
 
