@@ -1,10 +1,17 @@
-# Generate locale
+# Generate locale :
+
+# uncomment needed locales
 sed -i 's/#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
+
+# generate locale
 locale-gen
 
-echo LANG=en_US.UTF-8 > /etc/locale.conf
-export LANG=en_US.UTF-8
+# create locale.conf & set LANG variable
 localectl set-locale LANG=en_US.UTF-8
+
+export LANG=en_US.UTF-8
+# export LANGUAGE=$LANG
+# export LC_ALL=$LANG
 
 # Set timezone
 timedatectl set-timezone Asia/Kolkata
