@@ -56,7 +56,7 @@ useradd -m -G wheel -s /bin/fish snowball
 passwd snowball
 
 # Enable sudoers
-sed -i 's/# %wheel ALL=(ALL) ALL/  %wheel ALL=(ALL) ALL/' /etc/sudoers
+sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 
 # Install Microcode
 # pacman -S amd-ucode --noconfirm
