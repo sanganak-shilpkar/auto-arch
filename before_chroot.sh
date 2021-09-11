@@ -38,7 +38,7 @@ mkfs.ext4 /dev/sda2
 mount /dev/sda2 /mnt
 
 # Sync pacman repos & install reflector
-pacman -Syy reflector
+pacman -Syy reflector --noconfirm
 
 # Fetch mirror list 
 reflector -c "IN" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
