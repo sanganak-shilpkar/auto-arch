@@ -34,12 +34,12 @@ mkdir /boot/efi
 mount /dev/sda1 /boot/efi
 
 # Install & setup grub 
-pacman -S grub efibootmgr
+pacman -S grub efibootmgr --noconfirm
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Install & setup network
-pacman -S networkmanager network-manager-applet
+pacman -S networkmanager network-manager-applet --noconfirm
 systemctl enable NetworkManager
 
 # Install regular user
@@ -52,36 +52,36 @@ passwd snowball
 sed -i 's/# %wheel ALL=(ALL) ALL/  %wheel ALL=(ALL) ALL/' /etc/sudoers
 
 # Install Microcode
-# pacman -S amd-ucode
-  pacman -S intel-ucode
+# pacman -S amd-ucode --noconfirm
+  pacman -S intel-ucode --noconfirm
 
 # Install Graphics Driver
-# pacman -S xf86-video-intel
-# pacman -S xf86-video-amdgpu
-  pacman -S nvidia nvidia-utils
+# pacman -S xf86-video-intel --noconfirm
+# pacman -S xf86-video-amdgpu --noconfirm
+  pacman -S nvidia nvidia-utils --noconfirm
     
 # Display Server
-pacman -S xorg
+pacman -S xorg --noconfirm
 
 # Display Manager
-pacman -S lightdm lightdm-gtk-greeter
+pacman -S lightdm lightdm-gtk-greeter --noconfirm
 systemctl enable lightdm
 
 # Install packages for GUI
-pacman -S xfce4 papirus-icon-theme xfce4-taskmanager xfce4-screenshooter
+pacman -S xfce4 papirus-icon-theme xfce4-taskmanager xfce4-screenshooter --noconfirm
 
 # Install filemanager
-pacman -S xarchiver unzip thunar-archive-plugin thunar-volman mtpfs libmtp gvfs gvfs-mtp android-tools android-udev
+pacman -S xarchiver unzip thunar-archive-plugin thunar-volman mtpfs libmtp gvfs gvfs-mtp android-tools android-udev --noconfirm
 
 # Intall packages for audio
-pacman -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth xfce4-pulseaudio-plugin pavucontrol
+pacman -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth xfce4-pulseaudio-plugin pavucontrol --noconfirm
 
 # Install bluetooth
-pacman -S blueman bluez bluez-utils
+pacman -S blueman bluez bluez-utils --noconfirm
 systemctl enable bluetooth.service
 
 # Install Firewall
-pacman -S gufw
+pacman -S gufw --noconfirm
 
 # TRIM for SSDs
 systemctl enable fstrim.timer
