@@ -34,7 +34,7 @@ mkdir /boot/efi
 mount /dev/sda1 /boot/efi
 
 # Install shell tools
-pacman -S neovim fish tmux git sudo which --noconfirm
+pacman -S neovim fish tmux git sudo fakeroot which --noconfirm
 
 # Set defaults
 echo 'export export VISUAL=nvim' | tee -a /etc/profile
