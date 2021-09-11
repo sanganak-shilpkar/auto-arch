@@ -1,6 +1,6 @@
 # Generate locale
-# sed -i 's/#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
-locale-gen en_US.UTF-8
+sed -i 's/#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
+locale-gen
 
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
@@ -60,12 +60,12 @@ sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 
 # Install Microcode
 # pacman -S amd-ucode --noconfirm
-  pacman -S intel-ucode --noconfirm
+# pacman -S intel-ucode --noconfirm
 
 # Install Graphics Driver
 # pacman -S xf86-video-intel --noconfirm
 # pacman -S xf86-video-amdgpu --noconfirm
-  pacman -S nvidia nvidia-utils --noconfirm
+#  pacman -S nvidia nvidia-utils --noconfirm
     
 # Display Server
 pacman -S xorg --noconfirm
@@ -78,20 +78,20 @@ systemctl enable lightdm
 pacman -S xfce4 papirus-icon-theme xfce4-taskmanager xfce4-screenshooter --noconfirm
 
 # Install filemanager
-pacman -S xarchiver unzip thunar-archive-plugin thunar-volman mtpfs libmtp gvfs gvfs-mtp android-tools android-udev --noconfirm
+# pacman -S xarchiver unzip thunar-archive-plugin thunar-volman mtpfs libmtp gvfs gvfs-mtp android-tools android-udev --noconfirm
 
 # Intall packages for audio
-pacman -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth xfce4-pulseaudio-plugin pavucontrol --noconfirm
+# pacman -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth xfce4-pulseaudio-plugin pavucontrol --noconfirm
 
 # Install bluetooth
-pacman -S blueman bluez bluez-utils --noconfirm
-systemctl enable bluetooth.service
+# pacman -S blueman bluez bluez-utils --noconfirm
+# systemctl enable bluetooth.service
 
 # Install Firewall
-pacman -S gufw --noconfirm
+# pacman -S gufw --noconfirm
 
 # TRIM for SSDs
-systemctl enable fstrim.timer
+# systemctl enable fstrim.timer
 
 # Reboot
 exit
