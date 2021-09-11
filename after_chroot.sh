@@ -43,6 +43,9 @@ mount /dev/sda1 /boot/efi
 # Install shell tools
 pacman -S neovim fish tmux git sudo fakeroot which --noconfirm
 
+# Update fish hostname to uname -n
+sed -i 's/hostname/uname -n/' ~/.config/fish/functions/fish_prompt.fish
+
 # Set defaults
 echo 'export export VISUAL=nvim' | tee -a /etc/profile
 echo 'export export EDITOR=$VISUAL' | tee -a /etc/profile
