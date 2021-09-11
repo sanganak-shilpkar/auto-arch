@@ -84,7 +84,7 @@ systemctl enable bluetooth.service
 pacman -S gufw
 
 # TRIM for SSDs
-sudo systemctl enable fstrim.timer
+systemctl enable fstrim.timer
 
 # Reboot
 exit
