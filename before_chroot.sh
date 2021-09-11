@@ -44,8 +44,7 @@ pacman -Syy reflector
 reflector -c "IN" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
 
 # Install essential packages
-# pacstrap /mnt base base-devel linux linux-firmware neovim fish tmux
-pacstrap /mnt base linux neovim fish tmux
+pacstrap /mnt base base-devel linux linux-firmware neovim fish tmux
 
 # Fetch second script
 curl https://raw.githubusercontent.com/sanganak-shilpkar/auto-arch/main/after_chroot.sh > /mnt/Archchroot.sh
