@@ -101,20 +101,32 @@ xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary>F5" -n -t st
 # xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-1' --reset
 
 # create single panel
-xfconf-query -c 'xfce4-panel' -p '/panels' -t int -s 1
+# xfconf-query -c 'xfce4-panel' -p '/panels' -t int -s 1
 
 # remove plugin ids 
-xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -rR
+# xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -rR
+
+# create plugin ids
+# xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -t int -s 1 -t int -s 2 -t int -s 3 --create
+
+# create plugins
+# xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-1' -s "power-manager-plugin"
+
+# xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-2' -s "systray"
+# xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-2/icon-size' -s 48
+
+# xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-3' -s "pulseaudio"
+
+# create single panel
+xfconf-query -c 'xfce4-panel' -p '/panels' -t int -s 1
 
 # create plugin ids
 xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -t int -s 1 -t int -s 2 -t int -s 3 --create
 
 # create plugins
 xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-1' -s "power-manager-plugin"
-
 xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-2' -s "systray"
 xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-2/icon-size' -s 48
-
 xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-3' -s "pulseaudio"
 
 # move panel to top center
