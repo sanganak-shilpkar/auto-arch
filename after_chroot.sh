@@ -33,6 +33,13 @@ mkdir /boot/efi
 # Mount EFI partition
 mount /dev/sda1 /boot/efi
 
+# Install shell tools
+pacman -S neovim fish tmux git sudo which --noconfirm
+
+# Set defaults
+echo 'export export VISUAL=nvim' | tee -a /etc/profile
+echo 'export export EDITOR=$VISUAL' | tee -a /etc/profile
+
 # Install & setup grub 
 pacman -S grub efibootmgr --noconfirm
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
