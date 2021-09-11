@@ -40,60 +40,60 @@ xfconf-query -c xfce4-desktop -p /desktop-icons/show-thumbnails -s false
 # ----- xfce4-keyboard-shortcuts -----
 
 # window operation menu
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Alt>space -s "popup_menu_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Alt>space" -s "popup_menu_key"
 
 # cancel operation
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/Escape -s "cancel_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/Escape" -s "cancel_key"
 
 # cycle windows
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Alt>Tab -s "cycle_windows_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Alt>Tab" -s "cycle_windows_key"
 
 # close window
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Alt>F4 -s "close_window_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Alt>F4" -s "close_window_key"
 
 # move to left workspace
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Primary><Alt>Left -s "left_workspace_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary><Alt>Left" -s "left_workspace_key"
 
 # move to right workspace
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Primary><Alt>Right -s "right_workspace_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary><Alt>Right" -s "right_workspace_key"
 
 # ===== window management =====
 
 # maximize window : <Super>[ Up Arrow ]
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Super>Up -s "maximize_window_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Super>Up" -n -t string -s maximize_window_key
 # minimize window : <Super>[ Down Arrow ]
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Super>Down -s "hide_window_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Super>Down" -n -t string -s hide_window_key
 
 # move window to LEFT : <Super>[ Left Arrow ] 
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Super>Left -s "tile_left_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Super>Left" -n -t string -s tile_left_key
 # move window to RIGHT : <Super>[ Right Arrow ] 
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Super>Right -s "tile_right_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Super>Right" -n -t string -s tile_right_key
 
 # move window to TOP LEFT : <Super> [ Numpad 8 ]
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Super>KP_Up -s "tile_up_left_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Super>KP_Up" -n -t string -s tile_up_left_key
 # move window to TOP RIGHT : <Super>[ Numpad 9 ]
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Super>KP_Page_Up -s "tile_up_right_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Super>KP_Page_Up" -n -t string -s tile_up_right_key
 
 # move window to DOWN LEFT : <Super>[ Numpad 5]
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Super>KP_Begin -s "tile_down_left_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Super>KP_Begin" -n -t string -s tile_down_left_key
 # move window to DOWN RIGHT : <Super>[ Numpad 6]
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Super>KP_Right -s "tile_down_right_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Super>KP_Right" -n -t string -s tile_down_right_key
 
 # Toggle window raise : <Super>[ Numpad 7 ]
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Super>KP_Home -s "above_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Super>KP_Home" -n -t string -s above_key
 
 # Show desktop : <Primary><Alt>d
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Primary><Alt>d -s "show_desktop_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary><Alt>d" -n -t string -s show_desktop_key
 
 # ===== switch workspaces =====
 
 # switch to workspace 1...2 for <Primary>F1...F12
 
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Primary>F1 -s "workspace_1_key"
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Primary>F2 -s "workspace_2_key"
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Primary>F3 -s "workspace_3_key"
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Primary>F4 -s "workspace_4_key"
-xfconf-query -c xfce4-keyboard-shortcuts -p /xfwm4/custom/<Primary>F5 -s "workspace_5_key"
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary>F1" -n -t string -s workspace_1_key
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary>F2" -n -t string -s workspace_2_key
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary>F3" -n -t string -s workspace_3_key
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary>F4" -n -t string -s workspace_4_key
+xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary>F5" -n -t string -s workspace_5_key
 
 
 
