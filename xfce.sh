@@ -79,10 +79,10 @@ xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Super>KP_Begin" -n -
 # move window to DOWN RIGHT : <Super>[ Numpad 6]
 xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Super>KP_Right" -n -t string -s tile_down_right_key
 
-# Toggle window raise : <Super>[ Numpad 7 ]
+# toggle window raise : <Super>[ Numpad 7 ]
 xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Super>KP_Home" -n -t string -s above_key
 
-# Show desktop : <Primary><Alt>d
+# show desktop : <Primary><Alt>d
 xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary><Alt>d" -n -t string -s show_desktop_key
 
 # ===== switch workspaces =====
@@ -118,40 +118,41 @@ xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary>F5" -n -t st
 # xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-3' -s "pulseaudio"
 
 # create single panel
-xfconf-query -c 'xfce4-panel' -p '/panels' -t int -s 1
+# xfconf-query -c 'xfce4-panel' -p '/panels' -t int -s 1
 
 # create plugin ids
-xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -t int -s 1 -t int -s 2 -t int -s 3 --create
+# xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -t int -s 1 -t int -s 2 -t int -s 3 --create
 
 # create plugins
-xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-1' -s "power-manager-plugin"
-xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-2' -s "systray"
-xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-2/icon-size' -s 48
-xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-3' -s "pulseaudio"
+# xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-1' -s "power-manager-plugin"
+# xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-2' -s "systray"
+# xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-2/icon-size' -s 48
+# xfconf-query --channel 'xfce4-panel' -p '/plugins/plugin-3' -s "pulseaudio"
 
 # move panel to top center
-xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/position' -t string -s "p=9;x=952;y=25"
+# xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/position' -t string -s "p=9;x=952;y=25"
 
 # enable dark-mode
-xfconf-query -c 'xfce4-panel' -p '/panels/dark-mode' -s true
+# xfconf-query -c 'xfce4-panel' -p '/panels/dark-mode' -s true
 
 # adjust length
-xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/length-adjust' -t bool -ns true
+# xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/length-adjust' -t bool -ns true
 
 # do not reserve space
-xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/disable-struts' -t bool -ns true
+# xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/disable-struts' -t bool -ns true
 
 # auto hide panel
-xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/autohide-behavior' -t bool -ns true
+# xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/autohide-behavior' -t bool -ns true
 
 # change panel row size
-xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/size' -s 52
+# xfconf-query -c 'xfce4-panel' -p '/panels/panel-1/size' -s 52
 
 # change icon size
-xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/icon-size' -t int -ns 36
+# xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/icon-size' -t int -ns 36
 
 # finally, local panel
-xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/position-locked' -t bool -ns true
+# xfconf-query --channel 'xfce4-panel' -p '/panels/panel-1/position-locked' -t bool -ns true
+
 
 
 
