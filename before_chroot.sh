@@ -47,12 +47,13 @@ reflector -c "IN" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
 pacstrap /mnt base base-devel linux linux-firmware
 
 # Fetch second script
-curl https://raw.githubusercontent.com/sanganak-shilpkar/auto-arch/main/after_chroot.sh > /mnt/Archchroot.sh
+curl https://raw.githubusercontent.com/sanganak-shilpkar/auto-arch/main/after_chroot.sh > /mnt/after_chroot.sh
 
 # Generate fstab file
 genfstab -U /mnt >> /mnt/etc/fstab
 
 # Change root to new system & run second script
-arch-chroot /mnt sh Archchroot.sh
+arch-chroot /mnt sh after_chroot.sh
+
 
 
